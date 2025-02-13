@@ -1,0 +1,8 @@
+from datasets import Dataset
+
+data = {
+    'input': ['ありがとう', 'わかりました', '今行きます'],
+    'output': ['ありがとうございます', '承知いたしました', '今、参ります']
+}
+
+dataset = Dataset.from_dict(data)
