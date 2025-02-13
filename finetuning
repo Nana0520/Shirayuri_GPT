@@ -1,0 +1,17 @@
+from transformers import Trainer, TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir='./results',  # 結果の保存場所
+    num_train_epochs=3,      # エポック数
+    per_device_train_batch_size=8,  # バッチサイズ
+    logging_dir='./logs',    # ログの保存場所
+    logging_steps=10,
+)
+
+trainer = Trainer(
+    model=model,                         # モデル
+    args=training_args,                  # トレーニングの設定
+    train_dataset=tokenized_dataset,     # 訓練用データ
+)
+
+trainer.train()
