@@ -1,0 +1,4 @@
+def tokenize_function(examples):
+    return tokenizer(examples['input'], padding="max_length", truncation=True)
+
+tokenized_dataset = dataset.map(tokenize_function, batched=True)
